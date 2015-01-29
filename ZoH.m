@@ -1,6 +1,4 @@
-function [resampled_signal] = ZoH (original_signal, sample_rate, sample_value)
-%Funktion Zero-order Hold
-%
+function [resampled_signal] = zoh_rsp (original_signal, sample_rate, sample_value)
 %This function interpolates the new sample values of the input signal by holding the last input value.
 %The methode used is called Zero-order Hold.
 %
@@ -29,6 +27,3 @@ for i = 1 : length(sample_value)
 end
 
 resampled_signal=resampled_signal';
-   
-    
-

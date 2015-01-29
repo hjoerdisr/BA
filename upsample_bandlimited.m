@@ -22,8 +22,8 @@ time_input = (0:dt:(N-1)*dt);   % time = all points between 0 until the end of t
 
 t=0:dt/X:(N-1)*dt;
 h = 0;
+ cutoff = 20/sampling_rate ;
 for n = 1:N
-    cutoff = 20/sampling_rate ;
     h = h + original_signal(n) * sinc(sampling_rate*(t - time_input(n))).*rectpuls(t-time_input(n), 2*cutoff);
 end
 

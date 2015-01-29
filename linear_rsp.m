@@ -21,7 +21,7 @@ resampled_signal = sample_value;
 for i = 1 : length(sample_value)
         h1 = sample_value(i)/dt;
         h_int = h1 - mod(h1,1)+1;
-        if h_int < length(original_signal)-1
+        if h_int < length(original_signal)
             line = mod(h1,1) * (original_signal(h_int + 1) - original_signal(h_int)) + original_signal(h_int);
             resampled_signal(i)=line;
         else
